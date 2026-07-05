@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iron Man — Tony Stark Portfolio</title>
+  <meta name="description" content="Tony Stark. Genius. Billionaire. Engineer. The most brilliant engineer in the universe." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <button class="nav-brand" onclick="navScrollTo('home')" aria-label="Scroll to top">
+        <svg class="brand-hex" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="16,2 30,9 30,23 16,30 2,23 2,9" stroke="currentColor" stroke-width="2" fill="none"/>
+          <circle cx="16" cy="16" r="4" fill="currentColor" opacity="0.6"/>
+        </svg>
+        <span>IRON MAN</span>
+      </button>
+      <div class="nav-links">
+        <button onclick="navScrollTo('home')" data-section="home">HOME</button>
+        <button onclick="navScrollTo('about')" data-section="about">ABOUT</button>
+        <button onclick="navScrollTo('arsenal')" data-section="arsenal">ARSENAL</button>
+        <button onclick="navScrollTo('missions')" data-section="missions">MISSIONS</button>
+        <button onclick="navScrollTo('stats')" data-section="stats">STATS</button>
+        <button onclick="navScrollTo('testimonials')" data-section="testimonials">TESTIMONIALS</button>
+        <button onclick="navScrollTo('contact')" data-section="contact">CONTACT</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section id="home" class="hero">
+    <div class="arc-glow"></div>
+    <div class="scanlines"></div>
+
+    <div class="hero-content fade-in-up">
+      <div class="badges" style="animation-delay:0.2s">
+        <span class="badge badge-muted">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          MARK L SUIT DEPLOYED
+        </span>
+        <span class="badge badge-accent">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          ARC REACTOR ONLINE
+        </span>
+        <span class="badge badge-muted">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          ZERO MISSION FAILURES
+        </span>
+      </div>
+
+      <p class="transmission-label" style="animation-delay:0.4s">STARK INDUSTRIES TRANSMISSION 001</p>
+
+      <h1 class="hero-title" style="animation-delay:0.5s">IRON MAN</h1>
+
+      <p class="hero-subtitle" style="animation-delay:0.8s">
+        THE MOST BRILLIANT ENGINEER IN THE <span class="gold">UNIVERSE</span>.
+      </p>
+
+      <p class="hero-desc" style="animation-delay:1s">
+        Full-stack engineer. Weapons. Systems. Suits. I build things that change the world — no committees, no compromises, no half-measures.
+      </p>
+
+      <div class="hero-stats" style="animation-delay:1.2s">
+        <div class="hero-stat"><span class="stat-num">85</span><span class="stat-label">Suits Engineered</span></div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat"><span class="stat-num">10,000+</span><span class="stat-label">Threats Neutralized</span></div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat"><span class="stat-num">0</span><span class="stat-label">Missions Failed</span></div>
+      </div>
+
+      <div class="hero-ctas" style="animation-delay:1.4s">
+        <button class="btn btn-primary" onclick="navScrollTo('missions')">VIEW MY MISSIONS</button>
+        <button class="btn btn-outline" id="jarvis-btn">
+          <span class="pulse-dot"></span>
+          ACTIVATE J.A.R.V.I.S.
+        </button>
+      </div>
+    </div>
+
+    <button class="scroll-hint" onclick="navScrollTo('about')" aria-label="Scroll to next section">
+      <span>SELECT A SECTION ABOVE</span>
+      <svg class="chevron-bounce" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </section>
+
+  <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+  <section id="about" class="section-about">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Arc Reactor Display -->
+        <div class="reveal reveal-left">
+          <div class="arc-display hud-corner-all">
+            <div class="arc-scanline"></div>
+            <div class="arc-reactor-graphic">
+              <div class="arc-ring arc-ring-1"></div>
+              <div class="arc-ring arc-ring-2"></div>
+              <div class="arc-ring arc-ring-3">
+                <div class="arc-core"></div>
+              </div>
+              <div class="arc-segments">
+                <div class="arc-seg" style="--rot:0deg"></div>
+                <div class="arc-seg" style="--rot:60deg"></div>
+                <div class="arc-seg" style="--rot:120deg"></div>
+                <div class="arc-seg" style="--rot:180deg"></div>
+                <div class="arc-seg" style="--rot:240deg"></div>
+                <div class="arc-seg" style="--rot:300deg"></div>
+              </div>
+            </div>
+            <span class="arc-label tl">PWR: 100%</span>
+            <span class="arc-label tr">CORE: STABLE</span>
+            <span class="arc-label bl">OUTPUT: 3GJ/s</span>
+            <span class="arc-label br blink crimson">AUTHORIZED</span>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="reveal reveal-right">
+          <h2 class="section-title">ABOUT <span class="gold">TONY STARK</span></h2>
+          <div class="about-text">
+            <p>I am Iron Man. The suit and I are one. To turn over the Iron Man suit would be to turn over myself, which is tantamount to indentured servitude or prostitution, depending on what state you're in.</p>
+            <p>Before the cave, I was just a genius, billionaire, playboy, philanthropist. After the cave, I realized my legacy couldn't just be the weapons I built, but the shield I could become. I privatized world peace. You're welcome.</p>
+            <p>I run Stark Industries, but my real job is staying ahead of the curve. If we can't protect the Earth, you can be damn well sure we'll avenge it.</p>
+          </div>
+          <div class="about-tags">
+            <div class="tag-card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44l-1.06-4.24a2.5 2.5 0 0 1 .12-1.47L8 10.5V7a2.5 2.5 0 0 1 1.5-2.3"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44l1.06-4.24a2.5 2.5 0 0 0-.12-1.47L16 10.5V7A2.5 2.5 0 0 0 14.5 2z"/></svg>
+              <div><span class="tag-sub">INTELLECT</span><span class="tag-val">GENIUS IQ</span></div>
+            </div>
+            <div class="tag-card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <div><span class="tag-sub">EDUCATION</span><span class="tag-val">MIT GRAD AT 15</span></div>
+            </div>
+            <div class="tag-card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              <div><span class="tag-sub">LEADERSHIP</span><span class="tag-val">CEO STARK IND.</span></div>
+            </div>
+            <div class="tag-card">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+              <div><span class="tag-sub">AFFILIATION</span><span class="tag-val crimson">AVENGER</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ ARSENAL ═══════════════════════════════ -->
+  <section id="arsenal" class="section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="header-line gold-line"></div>
+        <p class="header-sub gold">SYSTEM READOUT</p>
+        <h2 class="section-title">ARSENAL <span class="muted-text fw-light">// MARK L CAPABILITIES</span></h2>
+      </div>
+      <div class="capabilities-grid">
+        <div class="cap-card hud-corner-tl reveal stagger-1">
+          <div class="cap-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg></div>
+          <span class="cap-index">CAP_1</span>
+          <h3>Repulsor Blasts</h3>
+          <p>High-density muon beam projectors capable of piercing Chitauri armor.</p>
+          <div class="cap-bar-wrap">
+            <div class="cap-bar-labels"><span>POWER OUTPUT</span><span>95%</span></div>
+            <div class="cap-bar"><div class="cap-bar-fill crimson-bg" data-width="95"></div></div>
+          </div>
+        </div>
+        <div class="cap-card hud-corner-tl reveal stagger-2">
+          <div class="cap-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg></div>
+          <span class="cap-index">CAP_2</span>
+          <h3>Hypersonic Flight</h3>
+          <p>Mach 8+ atmospheric travel capability with orbital escape velocity.</p>
+          <div class="cap-bar-wrap">
+            <div class="cap-bar-labels"><span>POWER OUTPUT</span><span>100%</span></div>
+            <div class="cap-bar"><div class="cap-bar-fill gold-bg" data-width="100"></div></div>
+          </div>
+        </div>
+        <div class="cap-card hud-corner-tl reveal stagger-3">
+          <div class="cap-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+          <span class="cap-index">CAP_3</span>
+          <h3>J.A.R.V.I.S. A.I.</h3>
+          <p>Natural language heuristic operating system with global surveillance integration.</p>
+          <div class="cap-bar-wrap">
+            <div class="cap-bar-labels"><span>POWER OUTPUT</span><span>100%</span></div>
+            <div class="cap-bar"><div class="cap-bar-fill accent-bg" data-width="100"></div></div>
+          </div>
+        </div>
+        <div class="cap-card hud-corner-tl reveal stagger-1">
+          <div class="cap-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <span class="cap-index">CAP_4</span>
+          <h3>Nano-Tech Deployment</h3>
+          <p>Fluid housing matrix allowing instantaneous suit generation and weapon morphing.</p>
+          <div class="cap-bar-wrap">
+            <div class="cap-bar-labels"><span>POWER OUTPUT</span><span>90%</span></div>
+            <div class="cap-bar"><div class="cap-bar-fill crimson-bg" data-width="90"></div></div>
+          </div>
+        </div>
+        <div class="cap-card hud-corner-tl reveal stagger-2">
+          <div class="cap-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <span class="cap-index">CAP_5</span>
+          <h3>Arc Reactor Core</h3>
+          <p>Clean energy generator outputting 8 gigajoules per second. Self-sustaining.</p>
+          <div class="cap-bar-wrap">
+            <div class="cap-bar-labels"><span>POWER OUTPUT</span><span>100%</span></div>
+            <div class="cap-bar"><div class="cap-bar-fill accent-bg" data-width="100"></div></div>
+          </div>
+        </div>
+        <div class="cap-card hud-corner-tl reveal stagger-3">
+          <div class="cap-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg></div>
+          <span class="cap-index">CAP_6</span>
+          <h3>Retro-Reflective Stealth</h3>
+          <p>Optical camouflage and radar-absorbent materials for undetected operations.</p>
+          <div class="cap-bar-wrap">
+            <div class="cap-bar-labels"><span>POWER OUTPUT</span><span>80%</span></div>
+            <div class="cap-bar"><div class="cap-bar-fill gold-bg" data-width="80"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ MISSIONS ═══════════════════════════════ -->
+  <section id="missions" class="section-bg">
+    <div class="container">
+      <div class="section-header text-right reveal">
+        <div class="header-line crimson-line ml-auto"></div>
+        <p class="header-sub crimson">DECRYPTING LOGS...</p>
+        <h2 class="section-title">MISSION LOGS <span class="muted-text fw-light">// CLASSIFIED</span></h2>
+      </div>
+      <div class="missions-grid">
+        <div class="mission-card reveal stagger-1">
+          <div class="mission-scan"></div>
+          <div class="mission-header">
+            <span class="mission-status">COMPLETED</span>
+            <span class="mission-year">2012</span>
+          </div>
+          <h3>Operation: Avengers Initiative</h3>
+          <p>Battle of New York. Intercepted Chitauri invasion force. Diverted nuclear payload to hostile mothership.</p>
+          <div class="mission-footer"><span>LOC: NEW YORK, USA</span><span>AUTHORIZATION: STARK_T</span></div>
+        </div>
+        <div class="mission-card reveal stagger-2">
+          <div class="mission-scan"></div>
+          <div class="mission-header">
+            <span class="mission-status">COMPLETED</span>
+            <span class="mission-year">2013</span>
+          </div>
+          <h3>Operation: Mandarin Takedown</h3>
+          <p>Infiltrated Killian's compound. Activated 'House Party Protocol'. Destroyed Extremis soldiers.</p>
+          <div class="mission-footer"><span>LOC: MIAMI, USA</span><span>AUTHORIZATION: STARK_T</span></div>
+        </div>
+        <div class="mission-card reveal stagger-1">
+          <div class="mission-scan"></div>
+          <div class="mission-header">
+            <span class="mission-status">COMPLETED</span>
+            <span class="mission-year">2015</span>
+          </div>
+          <h3>Operation: Sokovia Accord</h3>
+          <p>Confronted rogue AI Ultron. Devised plan to overcharge vibrating core to shatter falling landmass.</p>
+          <div class="mission-footer"><span>LOC: SOKOVIA</span><span>AUTHORIZATION: STARK_T</span></div>
+        </div>
+        <div class="mission-card reveal stagger-2">
+          <div class="mission-scan"></div>
+          <div class="mission-header">
+            <span class="mission-status defeated">DEFEATED – TEMPORARY</span>
+            <span class="mission-year">2018</span>
+          </div>
+          <h3>Operation: Titan Engagement</h3>
+          <p>Engaged Thanos on his homeworld. Drew first blood. Survived moon impact.</p>
+          <div class="mission-footer"><span>LOC: TITAN</span><span>AUTHORIZATION: STARK_T</span></div>
+        </div>
+        <div class="mission-card reveal stagger-1">
+          <div class="mission-scan"></div>
+          <div class="mission-header">
+            <span class="mission-status">COMPLETED</span>
+            <span class="mission-year">2023</span>
+          </div>
+          <h3>Operation: Time Heist</h3>
+          <p>Invented chronological GPS. Retrieved Tesseract from 1970. Engineered Nano Gauntlet.</p>
+          <div class="mission-footer"><span>LOC: VARIOUS</span><span>AUTHORIZATION: STARK_T</span></div>
+        </div>
+        <div class="mission-card reveal stagger-2">
+          <div class="mission-scan"></div>
+          <div class="mission-header">
+            <span class="mission-status gold-status">FINAL SUCCESS</span>
+            <span class="mission-year">2023</span>
+          </div>
+          <h3>Operation: Infinity War</h3>
+          <p>The final stand. Acquired Infinity Stones. Executed the snap. Saved the universe.</p>
+          <div class="mission-footer"><span>LOC: EARTH</span><span>AUTHORIZATION: STARK_T</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ STATS ═══════════════════════════════ -->
+  <section id="stats" class="section-stats">
+    <div class="stats-radial"></div>
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <h2 class="section-title">SYSTEM DIAGNOSTICS <span class="gold fw-light">// STARK METRICS</span></h2>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card hud-corner-br reveal stagger-1">
+          <div class="stat-value gold" data-target="85" data-suffix="">0</div>
+          <div class="stat-label">SUITS ENGINEERED</div>
+        </div>
+        <div class="stat-card hud-corner-br reveal stagger-2">
+          <div class="stat-value" data-target="10452" data-suffix="+">0</div>
+          <div class="stat-label">THREATS NEUTRALIZED</div>
+        </div>
+        <div class="stat-card hud-corner-br reveal stagger-3">
+          <div class="stat-value crimson" data-target="0" data-suffix="">0</div>
+          <div class="stat-label">MISSIONS FAILED</div>
+        </div>
+        <div class="stat-card hud-corner-br reveal stagger-1">
+          <div class="stat-value" data-target="17" data-suffix="">0</div>
+          <div class="stat-label">PATENTS FILED THIS WEEK</div>
+        </div>
+        <div class="stat-card hud-corner-br reveal stagger-2">
+          <div class="stat-value gold" data-target="130" data-suffix="B">0</div>
+          <div class="stat-label">NET WORTH (USD)</div>
+        </div>
+        <div class="stat-card hud-corner-br reveal stagger-3">
+          <div class="stat-value accent" data-target="1" data-suffix="">0</div>
+          <div class="stat-label">HEARTS KEEPING HIM ALIVE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ TESTIMONIALS ═══════════════════════════════ -->
+  <section id="testimonials" class="section-bg">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title">INTEL REPORTS <span class="muted-text fw-light">// VERIFIED SOURCES</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal stagger-1">
+          <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <p>"Tony Stark is the most capable individual I have ever encountered. He's also the most exhausting."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">NF</div>
+            <div><strong>Nick Fury</strong><span>Director, S.H.I.E.L.D.</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal stagger-2">
+          <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <p>"Without the suit, he's just a man. With it, he's Iron Man. Either way, he delivers when it counts."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SR</div>
+            <div><strong>Steve Rogers</strong><span>Captain America</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal stagger-3">
+          <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <p>"His engineering output in a single afternoon exceeds what most governments accomplish in a decade."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PP</div>
+            <div><strong>Pepper Potts</strong><span>CEO, Stark Industries</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal stagger-1">
+          <svg class="quote-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          <p>"I've run the simulations millions of times. The probability of success increases by 99.9% when Sir is involved."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar accent-avatar">AI</div>
+            <div><strong>J.A.R.V.I.S.</strong><span>A.I. System</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+  <section id="contact" class="section-dark border-top-gold">
+    <div class="scanlines opacity-10"></div>
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <h2 class="section-title">OPEN A CHANNEL <span class="gold fw-light">// STARK COMMS</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal reveal-left">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div><span class="contact-sub">COORDINATES</span><span class="contact-val">10880 Malibu Point, CA 90265</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.4"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.4"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>
+            </div>
+            <div><span class="contact-sub">FREQUENCY</span><span class="contact-val">stark@starkindustries.com</span></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div><span class="contact-sub">RESPONSE TIME</span><span class="contact-val">&lt; 72 hours (if not saving the world)</span></div>
+          </div>
+          <div class="contact-alert">
+            &#9888; URGENT AVENGERS BUSINESS ROUTES DIRECTLY TO J.A.R.V.I.S. OVERRIDE CODE REQUIRED.
+          </div>
+        </div>
+
+        <div class="reveal reveal-right">
+          <form class="contact-form hud-corner-tl" id="contact-form">
+            <div class="form-group">
+              <label for="f-name">SENDER IDENTITY</label>
+              <input id="f-name" type="text" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="f-email">RETURN SIGNAL (EMAIL)</label>
+              <input id="f-email" type="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="f-msg">TRANSMISSION DATA</label>
+              <textarea id="f-msg" rows="4" placeholder="Enter message..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="submit-btn">
+              <span id="submit-text">TRANSMIT MESSAGE</span>
+              <svg id="submit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ JARVIS MODAL ═══════════════════════════════ -->
+  <div id="jarvis-overlay" class="jarvis-overlay" aria-hidden="true">
+    <div class="jarvis-modal" role="dialog" aria-label="J.A.R.V.I.S. Chat">
+      <!-- Corner brackets -->
+      <div class="modal-corner tl"></div>
+      <div class="modal-corner tr"></div>
+      <div class="modal-corner bl"></div>
+      <div class="modal-corner br"></div>
+
+      <!-- Header -->
+      <div class="jarvis-header">
+        <div class="jarvis-brand">
+          <div class="jarvis-reactor">
+            <div class="jr-ring jr-outer"></div>
+            <div class="jr-ring jr-inner"></div>
+            <div class="jr-core"></div>
+          </div>
+          <div>
+            <div class="jarvis-name">J.A.R.V.I.S.</div>
+            <div class="jarvis-sub">JUST A RATHER VERY INTELLIGENT SYSTEM</div>
+          </div>
+        </div>
+        <div class="jarvis-controls">
+          <div class="online-badge"><span class="online-dot"></span>ONLINE</div>
+          <button class="jarvis-reset" id="jarvis-reset">RESET</button>
+          <button class="jarvis-close" id="jarvis-close" aria-label="Close">&times;</button>
+        </div>
+      </div>
+      <div class="jarvis-divider"></div>
+
+      <!-- Messages -->
+      <div class="jarvis-messages" id="jarvis-messages"></div>
+
+      <div class="jarvis-divider"></div>
+
+      <!-- Input -->
+      <div class="jarvis-input-area">
+        <div class="jarvis-input-wrap">
+          <input type="text" id="jarvis-input" placeholder="Enter transmission..." autocomplete="off" />
+          <button id="jarvis-send" aria-label="Send">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+        <div class="jarvis-footer-label">STARK INDUSTRIES ENCRYPTED CHANNEL</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
