@@ -4,7 +4,7 @@
    ⚙️  ADD YOUR GROQ API KEY BELOW to power J.A.R.V.I.S.
       Get one free at: https://console.groq.com
    ═══════════════════════════════════════════════════════ */
-const GROQ_API_KEY = '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';
+const GROQ_API_KEY = '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';
 
 /* ─── Smooth scroll ─── */
 function navScrollTo(id) {
